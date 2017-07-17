@@ -44,7 +44,7 @@ Bonus points are given for the following extra features:
 * Run `php app/console assets:install --symlink web` and `php app/console assetic:dump` to dump assets files.
 * Run `php app/console server:run` to start server.
 
-That's it, try to access the application at `http://localhost/challenge/web/app_dev.php` (or `app.php` for production mode).
+That's it, try to access the application at `http://localhost:8000/app_dev.php` (or `app.php` for production mode).
 
 Please feel free to add the libraries that you need!
 
