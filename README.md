@@ -8,18 +8,12 @@ To test this version on local server:
 
 git clone https://github.com/JaskaPaa/challenge.git
 
-cd challenge 
+cd challenge
 php composer.phar update
-
 php composer.phar install
-
 php app/console assets:install --symlink web
-
 php app/console assetic:dump
-
 php app/console server:run
-
-
 
 Goto http://localhost:8000/app_dev.php
 
