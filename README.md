@@ -8,11 +8,11 @@ To test this version on a local server:
 
 git clone https://github.com/JaskaPaa/challenge.git <br>
 cd challenge <br>
-php composer.phar update <br />
-php composer.phar install <br />
-php app/console assets:install --symlink web <br />
-php app/console assetic:dump <br />
-php app/console server:run <br />
+php composer.phar update <br>
+php composer.phar install <br>
+php app/console assets:install --symlink web <br>
+php app/console assetic:dump <br>
+php app/console server:run <br>
 
 Goto http://localhost:8000/app_dev.php
 
