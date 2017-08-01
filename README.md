@@ -8,8 +8,7 @@ To test this version on local server:
 
 git clone https://github.com/JaskaPaa/challenge.git
 
-cd challenge
-
+cd challenge 
 php composer.phar update
 
 php composer.phar install
