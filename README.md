@@ -4,10 +4,10 @@ A simple tool to search Finnish towns and their population. Project is unfinishe
 
 ### Challenge install and test
 
-To test this version on local server:
+To test this version on a local server:
 
-git clone https://github.com/JaskaPaa/challenge.git <br />
-cd challenge <br />
+git clone https://github.com/JaskaPaa/challenge.git <br>
+cd challenge <br>
 php composer.phar update <br />
 php composer.phar install <br />
 php app/console assets:install --symlink web <br />
