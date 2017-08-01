@@ -6,14 +6,13 @@ A simple tool to search Finnish towns and their population. Project is unfinishe
 
 To test this version on local server:
 
-git clone https://github.com/JaskaPaa/challenge.git
-
-cd challenge
-php composer.phar update
-php composer.phar install
-php app/console assets:install --symlink web
-php app/console assetic:dump
-php app/console server:run
+git clone https://github.com/JaskaPaa/challenge.git <br />
+cd challenge <br />
+php composer.phar update <br />
+php composer.phar install <br />
+php app/console assets:install --symlink web <br />
+php app/console assetic:dump <br />
+php app/console server:run <br />
 
 Goto http://localhost:8000/app_dev.php
 
