@@ -8,40 +8,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-function build_sorter($key) {
-    
-    return function ($a, $b) use ($key) {
-        return strnatcmp( strtolower($a[$key]), strtolower($b[$key]) );
-    };
-}
 
 
 class DefaultController extends Controller
 {
-
-    private function getPostalArray() {
-        
-        // Read resource file.
-
-        $kernel = $this->get('kernel');
-
-        $filePath = $kernel->locateResource('@SJWSearchBundle/Resources/data/numbers.txt');
-
-        // Split lines and comma delimited values.
-        $lines = explode("\n", file_get_contents($filePath, true));
-
-        $numbers = array();
-
-        foreach($lines as $line) {
-            $numbers[] = explode(';', $line);
-        }
-        // sort by population
-        usort($numbers, function ($a, $b) {
-            return strnatcmp( strtolower($a[2]), strtolower($b[2]) );
-        });
-
-        return $numbers;
-    }
 
     /**
      * @Route("/")
@@ -124,5 +94,40 @@ class DefaultController extends Controller
         return new JsonResponse(array_slice($respo, 0, 25));
 
     }
+
+
+    private function getPostalArray() {
+        
+        // Read resource file.
+
+        $kernel = $this->get('kernel');
+
+        $filePath = $kernel->locateResource('@SJWSearchBundle/Resources/data/numbers.txt');
+
+        // Split lines and comma delimited values.
+        $lines = explode("\n", file_get_contents($filePath, true));
+
+        $numbers = array();
+
+        foreach($lines as $line) {
+            $numbers[] = explode(';', $line);
+        }
+        
+        // sort by population
+        usort($numbers, function ($a, $b) {
+            return $a[2] - $b[2];
+        });
+
+        return $numbers;
+    }
+
     
+}
+
+// future need ??
+function build_sorter($key) {
+    
+    return function ($a, $b) use ($key) {
+        return strnatcmp( strtolower($a[$key]), strtolower($b[$key]) );
+    };
 }
